@@ -11,7 +11,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 import model.AccessBackoffice;
 
 /**
@@ -50,7 +49,7 @@ public class WelcomeController {
         else if (password.isEmpty()) {
             checkLoginPassword = false;
             this.errorMessageContent = "Merci de saisir un mot de passe";
-
+        
         } else {
             // Find login in AccessBackoffice
             AccessBackoffice loginAccessBackoffice = this.accessBackofficeDAO.find(login);
@@ -80,7 +79,7 @@ public class WelcomeController {
         if (!checkLoginPassword) {
             this.numberTry++;
         }
-
+       
         return checkLoginPassword;
     }
 

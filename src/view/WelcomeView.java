@@ -7,6 +7,8 @@ package view;
 
 import controller.WelcomeController;
 import dao.AccessBackofficeDAO;
+import dao.UserDAO;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -198,7 +200,24 @@ public class WelcomeView extends javax.swing.JDialog {
 
                     }
                 } while (!confirmationPassword);
+
             }
+
+            JFrame frame = new JFrame();
+
+            UserView users = new UserView();
+
+            frame.setTitle("Users");
+            frame.setSize(1024, 768);
+
+            frame.setResizable(false);
+            frame.setLocationRelativeTo(null);
+            frame.setLocation(450, 110);
+
+            frame.add(users);
+
+            frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+frame.setVisible(true);
         }
     }//GEN-LAST:event_ConnectonActionPerformed
 
